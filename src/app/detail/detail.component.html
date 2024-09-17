@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="item"></ion-card>
+  <img [src]="item.imageURL" />
+  <ion-card-header>
+    <ion-card-title>{{ item.title }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <p>{{ item.content }}</p>
+  </ion-card-content>
+</ion-content>
