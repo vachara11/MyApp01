@@ -1,6 +1,9 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Details</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>รายละเอียดสินค้า</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -8,9 +11,10 @@
   <ion-card *ngIf="item"></ion-card>
   <img [src]="item.imageURL" />
   <ion-card-header>
-    <ion-card-title>{{ item.title }}</ion-card-title>
+    <ion-card-title>{{ item.name }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <p>{{ item.content }}</p>
+    <p>ราคา {{ item.price}} บาท</p>
+    <p>{{ item.detail}}</p>
   </ion-card-content>
 </ion-content>

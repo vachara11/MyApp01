@@ -1,15 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>สินค้า</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <ion-grid>
-    <ion-col size="12" size-md="6" size-lg="4" *ngFor = "let item of items">
+    <ion-row>
+      <ion-col size="6" size-md="6" size-lg="4" *ngFor = "let item of items">
         <ion-card (click)="gotoDetails(item)">
           <img [src]="item.imageURL"/>
           <ion-card-header>
-            <ion-card-title>{{item.title}}</ion-card-title>
+            <ion-card-title>{{item.name}}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <p>{{item.content}}</p>
+            <p>ราคา {{item.price}} บาท</p>
           </ion-card-content>
         </ion-card>
     </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="warning" (click)="openSendComponent()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

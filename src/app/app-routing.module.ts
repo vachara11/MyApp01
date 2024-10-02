@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path:'detail',
     loadChildren: () => import('./detail/detail.module').then(m => m.DetailComponentModule)
+  },
+  {
+    path:'send',
+    loadChildren: () => import('./send/send.module').then(m => m.SendComponentModule)
   }
 ];
 

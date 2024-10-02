@@ -1,0 +1,35 @@
+<ion-header>
+ <ion-toolbar color="primary">
+  <ion-title>เพิ่มสินค้า</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="closeModal()">X</ion-button>
+  </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input [(ngModel)]="name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Price</ion-label>
+      <ion-input [(ngModel)]="price" name="price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Detail</ion-label>
+      <ion-input [(ngModel)]="detail" name="detail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Image</ion-label>
+      <ion-input class="x_form" type="file" (change)="onFileSelected($event)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-progress-bar *ngIf="uploadPercent" [value]="uploadPercent/100"></ion-progress-bar>
+    </ion-item>
+
+      <ion-button color="warning" (click)="onSubmit()" expand="block">Save</ion-button>
+
+  </form>
+</ion-content>
